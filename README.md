@@ -17,5 +17,5 @@ Overview of dependencies and config used in this repo.
 - Run `npx playwright test`
 
 
-## At one time -- We can run single test to avoid any point failure into TC02 $ TC06
+## At one time -- We can run single test to avoid any point failure into TC02 & TC06
 - `test.only`
