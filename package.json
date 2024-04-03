@@ -3,7 +3,10 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "scripts": {},
+  "scripts": 
+  {
+    "test": "ts-node tests/*.ts"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
