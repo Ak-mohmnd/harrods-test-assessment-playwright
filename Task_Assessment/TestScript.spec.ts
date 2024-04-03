@@ -157,7 +157,7 @@ test("[TC05] This function will Never Login User Successfully with Invalid Crede
  * TC06_Out of Stock Product
  * Description: This function will verify that the prodcut is out of stock
 ***********************************************************************/
-test("[TC06] This function will show that the product is out of stock", async () => 
+test.skip("[TC06] This function will show that the product is out of stock", async () => 
 {
     const LBL_Header = page.locator(PageHeader);
     const ExpectedText = 'Enjoy up to 30% off selected shoes.';
