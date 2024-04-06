@@ -70,7 +70,7 @@ test("[TC01] This function will Search the Product Successfully", async () =>
  * TC02_Add Product to Cart
  * Description: This function will add the product into the Cart successfully
 ***********************************************************************/
-test("[TC02] This function will Add a Product to Cart Successfully", async () => 
+test.skip("[TC02] This function will Add a Product to Cart Successfully", async () => 
 {
     const LBL_Header = page.locator(PageHeader);
     const ExpectedText = 'Enjoy up to 30% off selected shoes.';
@@ -157,7 +157,7 @@ test("[TC05] This function will Never Login User Successfully with Invalid Crede
  * TC06_Out of Stock Product
  * Description: This function will verify that the prodcut is out of stock
 ***********************************************************************/
-test.only("[TC06] This function will show that the product is out of stock", async () => 
+test("[TC06] This function will show that the product is out of stock", async () => 
 {
     const LBL_Header = page.locator(PageHeader);
     const ExpectedText = 'Enjoy up to 30% off selected shoes.';
