@@ -1,7 +1,10 @@
 import  { chromium, expect, test, } from "@playwright/test";
+import { Page } from 'playwright';
+
+
 
 //Selectors for Successful Product Search
-    const PageHeader = '//div//p[text()="Enjoy up to 30% off selected shoes. "]'
+    const PageHeader = '//button[text()="Explore The Store"]'
     const BTN_Search = '//button[@id="search-icon-button"]'
     const TXT_SearchFeild = '//input[@id="search-popover-input"]'
     const BTN_Icon = '//button[@id="searchInput-search-button"]'
@@ -35,6 +38,7 @@ const BTN_FilterJewellery = '//button[text()="Fine Jewellery "]'
 test.describe("E2E Automation -- QA Test Assessment", ()=> 
 {
 
+    //let page: Page;
     let page;
     test.beforeEach(async () => {
         const browser = await chromium.launch({
@@ -50,11 +54,11 @@ test.describe("E2E Automation -- QA Test Assessment", ()=>
  * TC01 -- Successful Product Search
  * Description: This function will search the product successfully
 ***********************************************************************/
-test("[TC01] This function will Search the Product Successfully", async () => 
+test.only("[TC01] This function will Search the Product Successfully", async () => 
 {
     const LBL_Header = page.locator(PageHeader);
-    const ExpectedText = 'Enjoy up to 30% off selected shoes.';
-    await page.waitForTimeout(2000);
+    const ExpectedText = 'Explore The Store';
+    await page.waitForTimeout(4000);
     await page.click(BTN_Search);
     await page.fill(TXT_SearchFeild, "Mens Leather Wallet");
     await page.click(BTN_Icon);
@@ -73,7 +77,7 @@ test("[TC01] This function will Search the Product Successfully", async () =>
 test("[TC02] This function will Add a Product to Cart Successfully", async () => 
 {
     const LBL_Header = page.locator(PageHeader);
-    const ExpectedText = 'Enjoy up to 30% off selected shoes.';
+    const ExpectedText = 'Explore The Store';
     await page.waitForTimeout(2000);
     await page.click(BTN_ProductCategory);
     await page.waitForTimeout(2000);
@@ -96,7 +100,7 @@ test("[TC02] This function will Add a Product to Cart Successfully", async () =>
 test("[TC03] This function will Login User Successfully", async () => 
 {
     const LBL_Header = page.locator(PageHeader);
-    const ExpectedText = 'Enjoy up to 30% off selected shoes.';
+    const ExpectedText = 'Explore The Store';
     await page.waitForTimeout(2000);
     await page.click(BTN_SignIn);
     const LBL_SignIn = page.locator(PageHeader);
@@ -119,7 +123,7 @@ test("[TC03] This function will Login User Successfully", async () =>
 test("[TC04] This function will Search No Product", async () => 
 {
     const LBL_Header = page.locator(PageHeader);
-    const ExpectedText = 'Enjoy up to 30% off selected shoes.';
+    const ExpectedText = 'Explore The Store';
     await page.waitForTimeout(2000);
     await page.click(BTN_Search);
     await page.fill(TXT_SearchFeild, "....");
@@ -136,7 +140,7 @@ test("[TC04] This function will Search No Product", async () =>
 test("[TC05] This function will Never Login User Successfully with Invalid Credentials", async () => 
 {
     const LBL_Header = page.locator(PageHeader);
-    const ExpectedText = 'Enjoy up to 30% off selected shoes.';
+    const ExpectedText = 'Explore The Store';
     await page.waitForTimeout(2000);
     await page.click(BTN_SignIn);
     const LBL_SignIn = page.locator(PageHeader);
@@ -157,10 +161,10 @@ test("[TC05] This function will Never Login User Successfully with Invalid Crede
  * TC06_Out of Stock Product
  * Description: This function will verify that the prodcut is out of stock
 ***********************************************************************/
-test.skip("[TC06] This function will show that the product is out of stock", async () => 
+test("[TC06] This function will show that the product is out of stock", async () => 
 {
     const LBL_Header = page.locator(PageHeader);
-    const ExpectedText = 'Enjoy up to 30% off selected shoes.';
+    const ExpectedText = 'Explore The Store';
     await page.waitForTimeout(2000);
     await page.click(BTN_ProductCategory);
     await page.waitForTimeout(2000);
