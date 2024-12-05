@@ -16,8 +16,7 @@ jobs:
         run: npm ci
       - name: Install playwright browsers
         run: npx playwright install --with-deps
-      - name: Update Playwright config for headless = false
-        run: |
-          echo "module.exports = { use: { headless: false } }" > playwright.config.js
+      - name: Set environment variable for non-headless mode
+        run: echo "PLAYWRIGHT_HEADLESS=false" >> $GITHUB_ENV
       - name: Run tests
-        run: npx playwright test
+        run: npx playwright test --headed
