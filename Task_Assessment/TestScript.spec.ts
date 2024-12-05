@@ -54,7 +54,7 @@ test.describe("E2E Automation -- QA Test Assessment", ()=>
  * TC01 -- Successful Product Search
  * Description: This function will search the product successfully
 ***********************************************************************/
-test.only("[TC01] This function will Search the Product Successfully", async () => 
+test("[TC01] This function will Search the Product Successfully", async () => 
 {
     const LBL_Header = page.locator(PageHeader);
     const ExpectedText = 'Explore The Store';
